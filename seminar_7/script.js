@@ -1,70 +1,83 @@
 /*
-1. Ко всем элементам, имеющим класс "dropdown-item" добавить еще один класс "super-dropdown", необходимо использовать методы forEach и querySelectorAll и свойство classList у элементов.
+1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все теги будут созданы браузером.
 */
 
-// Решение
 /*
-let c = document.querySelectorAll('.dropdown-item').forEach(c => c.classList.add('.super-dropdown'));
-*/
-
-
-/*
-2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он присутствует у этого элемента, либо добавить, если такого класса у элемента не было.
-*/
-
-//Решение
-/*
-document.querySelector('.btn').classList.toggle('btn-secondary');
+document.addEventListener('DOMContentLoaded', () => console.log('все теги прогрузились'));
 */
 
 
 /*
-3. Необходимо удалить класс "dropdown-menu" у элемента, у которого присутствует класс "menu".
+2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все ресурсы страницы будут загружены.
 */
 
-//Решение
 /*
-document.querySelector('.menu').classList.remove('dropdown-menu');
-*/
-
-
-/*
-4. Используя метод insertAdjacentHTML добавьте после div'a с классом "dropdown" следующую разметку:
-`<a href="#">link</a>`
-*/
-
-//Решение
-/*
-document.querySelector('div.dropdown').insertAdjacentHTML('afterend', '<a href="#">link</a>');
+window.onload = function() {
+    console.log('страница загрузилась')
+};
 */
 
 
 /*
-5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
+3. При клике на какой-либо тег на странице в консоль должно выводиться сообщение наподобие:
+- Класс "super_element" присутствует в элементе "div".
+- сообщение должно определять присутствует или отсутствует класс "super_element"
+- у элемента, а также выводить в нижнем регистре верный тег в данной строке, по
+- которому был совершен клик.
+- Необходимо использовать делегирование.
 */
-
-//Решение
-/*
-document.getElementById('dropdownMenuButton').id = 'superDropdown';
-*/
-
-
-/*
-6. Добавьте атрибут data-dd со значением 3 элементу у которого существует атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
-*/
-
-//Решение
-/*
-document.querySelector('[aria-labelledby="dropdownMenuButton"]').dataset.dd = "3";
-*/
-
-
 
 /*
-7. Удалите атрибут type у элемента с классом "dropdown-toggle".
+document.addEventListener('click', event => {
+    const containStr = event.target.classList.contains('super_element')
+        ? 'присутствует' : 'отсутствует';
+    console.log(`
+    Класс "super_element" ${containStr} в элементе 
+    "${event.target.tagName.toLowerCase()}".`);
+});
 */
-//Решение
+
+
 /*
-document.querySelector('.dropdown-toggle').removeAttribute('type');
+4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение: "Вы навели на textarea."
 */
+
+/*
+document.querySelector('textarea').addEventListener('mouseover', () => console.log("Вы навели на textarea."));
+*/
+
+
+/*
+5. Необходимо повесить событие клика на тег ul. В обработчике события в консоль необходимо выводить текст, который записан внутри элемента кнопки, по которой был произведен клик. Если клик был не по кнопке, то ничего выводить не нужно. Необходимо использовать делегирование.
+*/
+
+/*
+document.querySelector('ul').addEventListener('click', event => {
+    if (event.target.tagName !== "BUTTON") {
+        return;
+    }
+    console.log(event.target.textContent);
+});
+*/
+
+
+/*
+6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul? Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+*/
+
+ /*
+ потомучто в 5 задание идет обращение к элементу ul. программа сразу вылавливает тег и выводт первым в консоль при клике.
+ */
+
+
+/*
+7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+*/
+
+/*
+document.querySelectorAll('li:nth-child(2n)')
+.forEach(el => el.style.backgroundColor = 'green');
+*/
+
+
 
