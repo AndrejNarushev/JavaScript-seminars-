@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Это нужно для обнуления базовых стилей */
+    text-decoration: none;
+    font-family: "Lato";
+    font-style: normal;
+  }
+  
+  body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .center {
+    width: 1000px;
+    
+    margin: 0 auto;
+  }
+
+
+.demo{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+    background: #09f309;
+}
+
+.valuta{
+  display: flex;
+    justify-content: center;
+    border-style: double;
+    border-color: black;
+    background: #29fcf1;
+}
