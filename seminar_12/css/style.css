@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Это нужно для обнуления базовых стилей */
+    text-decoration: none;
+    font-family: "Lato";
+    font-style: normal;
+  }
+  
+  body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    cursor: pointer;
+  }
+  
+  .center {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+
+.demo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+    background: #09f309;
+}
+
+  .box{
+    display: none;
+  }
+
+.karta{
+  display: grid;
+    border-style: double;
+    border-color: black;
+    background: #29fcf1;
+    height: 350px;
+}
+.img{
+    display: flex;
+    justify-content: center;
+}
+ .product_a{
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+ }
+
+ .product_p{
+  display: flex;
+  justify-content: center;
+ }

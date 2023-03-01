@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cofe.css">  
+</head>
+<body>
+    <div class="player">
+        <video class="video" src="/Video/кофе.mp4"></video> 
+        <div>  
+            <div class="fa">
+    <i class="fas fa-play"></i>
+    <i class="fas fa-pause">pause</i>
+    <i class="fas fa-forward">forward</i>
+    <i class="fas fa-back">back</i>
+</div>
+</div>
+
+    </div>
+    <!-- <div>
+        <button onclick="document.getElementById('player').play()">Play</button>
+        <button onclick="document.getElementById('player').pause()">Pause</button>
+        <button onclick="document.getElementById('player').volume += 0.1">Vol +</button>
+        <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button>
+      </div> -->
+
+    
+
+    <script>
+        const videoEl=document.querySelector(".video");
+        const playButton = document.querySelector(".fa-play");
+        const pauseButton = document.querySelector(".fa-pause");
+        const forwardButton = document.querySelector(".fa-forward");
+        const backButton = document.querySelector(".fa-back");  
+
+        playButton.addEventListener('click', function (e) {
+            videoEl.play();
+        });
+
+        pauseButton.addEventListener('click', function (e) {
+            videoEl.pause();
+        });
+
+        forwardButton.addEventListener('click', function (e) {
+            videoEl.currentTime += 0.5;
+        });
+
+        backButton.addEventListener('click', function (e) {
+            videoEl.currentTime -= 0.5;
+        });
+
+    </script>
+    
+</body>
+</html>
